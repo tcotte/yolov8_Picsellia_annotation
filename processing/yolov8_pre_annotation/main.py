@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
         parameters = context["parameters"]
         confidence_threshold = parameters.get("confidence_threshold", 0.25)
-        image_size = parameters.get("img_size", 1024)
+        image_size = parameters.get("image_size", 1024)
 
         if 'single_class' in parameters:
             single_class = str2bool(str_value=parameters['single_class'])
@@ -54,7 +54,8 @@ if __name__ == "__main__":
 
         client = Client(api_token=os.getenv('PICSELLIA_TOKEN'), organization_name=os.getenv('ORGANIZATION_NAME'))
         parameters = {'max_det': 500,
-                      'single_class': True}
+                      'single_class': True,
+                      'image_size': 2048}
 
         input_dataset_version_id = os.getenv('INPUT_DATASET_VERSION_ID')
         model_version_id = os.getenv('MODEL_VERSION_ID')

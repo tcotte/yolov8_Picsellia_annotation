@@ -1,6 +1,8 @@
 FROM nvcr.io/nvidia/pytorch:24.01-py3
 LABEL authors="Tristan_COTTE"
 
+RUN pip install python-dotenv
+RUN pip install picsellia
 RUN pip install --no-cache-dir ultralytics
 RUN pip uninstall opencv -y
 RUN pip uninstall opencv-python -y
